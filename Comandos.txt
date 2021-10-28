@@ -1,6 +1,6 @@
 1) Arrancamos el docker
 
-# docker run --hostname=quickstart.cloudera --privileged=true -t -i --cpus=4 -v /home/ana/practicas_ICS_Mapreduce:/home/cloudera/practicas --publish-all=true -p 7180 cloudera/quickstart /usr/bin/docker-quickstart
+# sudo docker run --hostname=quickstart.cloudera --privileged=true -t -i --cpus=8 -v /home/josefigueirasm/Repositorios/practicaMapReduce:/home/cloudera/practicas --publish-all=true -p 7180 cloudera/quickstart /usr/bin/docker-quickstart
 
 Nota: en mi caso tengo que lanzarlo como root
 
@@ -105,17 +105,12 @@ docker ps -a
     # hdfs dfs -get salida_libros /home/cloudera/practicas/.
     
     Ahora en /home/cloudera/practicas/ tenmeos la carpeta salida_libros2
-    
-    
-    
-  
-
-     
      
  10) Podemos indicar el número de reducers:
  
-       #/usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input libros -output salida_libros
-       -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+ 	# PARA LANZAR EJERCICIO 1: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator -D  mapred.text.key.comparator.options=-n -input mediciones -output salida_mediciones -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
+ 
+       # PARA LANZAR EJERCICIO 2A: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator -D  mapred.text.key.comparator.options=-n -input condensed -output salida_condensed -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
      
 11) Ver el contenido de un fichero en formato hdfs:
      #  hdfs dfs -cat  fichero_hdfs
@@ -127,4 +122,13 @@ docker ps -a
 12 Borrar carpeta en hdfs:
     
      # hdfs dfs -rm -r directorio_hdfs
+     
+Para ejercicio 2
+
+       #/usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input Apr95 -output salida_apr95
+	       -mapper mapper.py -file mapper.py
+	       
+      #/usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input Apr95 -output salida_apr95
+       -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+     
      
