@@ -14,7 +14,7 @@ for line in sys.stdin:
     
     # convert value (currently a string) to int
     try:
-        value = int(value)
+        value = float(value)
     except ValueError:
         # count was not a number, so silently
         # ignore/discard this line
@@ -25,16 +25,14 @@ for line in sys.stdin:
         mean = value
         attributeCounter = 1
         first_execution = False
+        continue
 
     if winesubtypeAttribute == previous_attribute:
     	mean += value
     	attributeCounter += 1
     else:
     	mean = mean / attributeCounter
-    	print '%s\t%s' % (winesubtypeAttribute, mean)
+    	print '%s\t%s' % (previous_attribute, mean)
         previous_attribute = winesubtypeAttribute
         mean = value
         attributeCounter = 1
-    	
-    	
-
