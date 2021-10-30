@@ -23,6 +23,6 @@ for line in sys.stdin:
         
   if (!first_execution)
     nAttr = 0;
-    for attr in winetype:
+    for attr in winesubtype:
       print '%s\t%s' % (file_name + "-" + attributes[nAttr], attr) 
       nAttr += 1
