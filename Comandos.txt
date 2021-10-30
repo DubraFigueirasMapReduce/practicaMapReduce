@@ -110,9 +110,9 @@ docker ps -a
  
  	# PARA LANZAR EJERCICIO 1: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator -D  mapred.text.key.comparator.options=-n -input mediciones -output salida_mediciones -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
  
-       # PARA LANZAR EJERCICIO 2A: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator -D  mapred.text.key.comparator.options=-n -input condensed -output salida_condensed1 -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
+    # PARA LANZAR EJERCICIO 2A: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input condensed -output salida_condensed1 -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
        
-              # PARA LANZAR EJERCICIO 2B: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator -D  mapred.text.key.comparator.options=-n -input condensed -output salida_condensed2 -mapper mapper.py -file mapper.py
+    # PARA LANZAR EJERCICIO 2B: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input condensed -output salida_condensed2 -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
      
 11) Ver el contenido de un fichero en formato hdfs:
      #  hdfs dfs -cat  fichero_hdfs
