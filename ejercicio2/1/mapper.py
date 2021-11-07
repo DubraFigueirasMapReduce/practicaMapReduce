@@ -15,5 +15,5 @@ for line in sys.stdin:
   urlfiletype = url.split(".")
   urlfiletype = urlfiletype[-1]
   # Compare if the filetype is ps
-  if urlfiletype[:-1] == "ps":	
+  if urlfiletype[:-1] == "ps":
     print '%s\t%s' % (user, 1) 

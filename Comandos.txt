@@ -11,6 +11,8 @@
     
 # PARA LANZAR EJERCICIO 2B: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input condensed -output salida_condensed2 -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
 
+# PARA LANZAR EJERCICIO 2: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input condensed -output salida_condensed -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
+
 # PARA LANZAR EJERCICIO 3: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapred.job.maps=2 -input datos -output salida_winequality -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
 
 Nota: en mi caso tengo que lanzarlo como root
