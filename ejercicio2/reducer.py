@@ -77,5 +77,5 @@ for line in sys.stdin:
           current_count_url = count
           current_url = item
 
-print '%s\t%s' % (max_user[4:], max_count_user)
-print '%s\t%s' % (max_url[4:], max_count_url)
+print '%s\t%s' % (max_user, max_count_user)
+print '%s\t%s' % (max_url, max_count_url)

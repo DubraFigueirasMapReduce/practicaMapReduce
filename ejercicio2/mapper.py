@@ -3,13 +3,17 @@
 import os
 import sys
 
+file_name=os.environ['mapreduce_map_input_file']
+s1=file_name.split('/')
+file_name=s1[-1]
+file_name=file_name.split('.')
+user = file_name[0]
+
 for line in sys.stdin:
   # remove leading and trailing whitespace
   line = line.strip()
   # split the line into values
   entries = line.split()
-  # Get User
-  user = entries[2]
   # Get URL
   url = entries[3]
   # Print for exercise 2.2
