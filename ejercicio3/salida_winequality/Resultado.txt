@@ -15,3 +15,8 @@ white-quality	5.87790935076
 white-residual sugar	6.39141486321
 white-sulphates	0.489846876276
 white-total sulfur dioxide	138.360657411
+red-alcohol	10.4229831144
+red-density	0.996746679174
+red-pH	3.31111319575
+white-alcohol	10.5142670478
+white-density	0.99402737648
