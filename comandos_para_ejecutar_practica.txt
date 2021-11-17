@@ -1,0 +1,12 @@
+1) Arrancamos el docker
+
+# sudo docker run --hostname=quickstart.cloudera --privileged=true -t -i --cpus=8 -v /home/josefigueirasm/Repositorios/practicaMapReduce:/home/cloudera/practicas --publish-all=true -p 7180 cloudera/quickstart /usr/bin/docker-quickstart
+
+2) Ejecutar ejercicios
+
+
+# PARA LANZAR EJERCICIO 1: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapreduce.job.reduces=2 -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator -D  mapred.text.key.comparator.options=-n -input mediciones -output salida_mediciones -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
+
+# PARA LANZAR EJERCICIO 2: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapreduce.job.reduces=2 -input condensed -output salida_condensed -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py 
+
+# PARA LANZAR EJERCICIO 3: /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.7.0.jar  -D mapreduce.job.reduces=2 -input datos -output salida_winequality -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
